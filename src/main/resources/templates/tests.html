@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thmeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="./Assets/public/style.css">
+    <link rel="stylesheet" href="./Assets/css/main-style.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+
+<body id="serivces-page">
+        
+        <div th:replace="fragments/navbar :: navbar" ></div>
+        
+    <!-- Intro Section  -->
+    <div class="my-24">
+        <div class="Srv flex justify-center">
+            <p class="text-5xl ">Tests</p>
+        </div>
+
+        <Section class="Srv-section flex justify-center mt-12 pt-24 justify-around flex-wrap">
+            
+            <div th:each="test : ${tests}">
+            	<!-- Card -->
+	            <div class="Srv-card w-96 rounded overflow-hidden my-4">
+	                <div class="Srv-img">
+	                    
+							<img th:src="@{${test.getImage().getPath()}}" >
+						
+	                </div>
+	                <!-- <div class="Srv-time px-1 mx-2 my-3">
+	                    <p class="font-bold	">3Hrs</p>
+	                </div> -->
+	                <div class="Srv-face absolute">
+	                    <img class="" width="300px" height="300px"  th:src="@{${ test.user.image.path }}" alt="">
+	                </div>
+	                <div class="Srv-text p-6 mt-14">
+	                    <p class="text-2xl text-center font-bold t1" th:text="${test.titre}">
+	                        Test Titre 
+	                    </p>
+	                    <a th:href="@{/profile/{userId}(userId=${test.user.id})}" style="margin-left:40%">
+	                    	<span class="text-2xl text-center font-bold t1 " th:text="${test.user.userName}">
+				            	test owner username
+							</span>
+	                    </a>
+	                    <p class="lg mt-8 t2" th:text="${test.description}">
+	                        Test Description
+	                    </p>
+	                    <p  class="text-2xl text-center font-bold t1"  ><span th:text="${test.prix}" class="t1"  >Prix</span><span class="t1">DT</span></p>
+	                </div>
+	                <div class="Srv-Button p-4 flex justify-center">
+	                    <a th:href="@{/User/newDemand/{testId}(testId=${test.getId()})}" class="enroll-button py-2 px-6 text-xl font-medium">Demand Evaluation</a>
+	                </div>
+	            </div>
+	            <!-- End Card -->
+            </div>
+                                                            
+            
+        </Section>
+    </div>
+    <!-- End Intro Section  -->
+<div th:if="${tests == null or tests.size() == 0}" class="container d-flex justify-content-center align-items-center" style="padding:10rem">
+    	<hr>
+    	<span style="position:relative ; top:50%; color:black ; font-weight:bolder; font-size:30px ">No Tests Found!</span>
+    </div>
+</body>
+
+</html>

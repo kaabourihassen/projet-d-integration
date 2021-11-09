@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/profile.css">
+    <title>Profile</title>
+</head>
+
+<body>
+
+	<div class="d-flex justify-content-end container pt-4 ">
+		<a class="btn btn-primary my-btn-primary" th:href="@{/}" role="button"><i class="fas fa-angle-left"></i><span style="padding-left:10px">Home</span></a>
+	</div>
+				
+    <div class="container mt-5">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+			  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+			    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+			  </symbol>
+			  <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+			    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+			  </symbol>
+			</svg>
+			
+			<div  th:if="${Succes != null}" class="alert alert-success d-flex align-items-center alert-dismissible fade show" role="alert">
+			  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+			  <div th:text="${Succes}">
+			    An example success alert with an icon
+			  </div>
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			
+			<div th:if="${Failed != null}" class="alert alert-danger d-flex align-items-center alert-dismissible fade show" role="alert">
+			  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+			  <div th:text="${Failed}">
+			    An example danger alert with an icon
+			  </div>
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+        <div class="main-body">
+
+
+
+            <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                    <div class="card blue-card">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <img th:src="@{${user.image.path}}" alt="Image not found"
+                                    class="rounded-circle" width="150px" height="130px"  >
+                                <div class="mt-3">
+                                    <h2 th:text="${user.prenom +' ' +user.nom}"> user full name </h2>	
+                                    <p class="text-secondary mb-1" th:text="${user.currentPost}">Current post </p>
+                                    <p class="text-muted font-size-sm" th:text="${user.adresse}">Bay Area, San Francisco, CA</p>
+                                    <a th:href="@{/chat/{userId}(userId=${user.id})}"><button class="btn btn-outline-primary my-btn-outline-primary">Message</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <ul class="list-group list-group-flush">
+                        	<li class="list-group-item d-flex justify-content-between align-items-center flex-wrap" >
+                        		<h6 class="mb-0" >
+                        			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github me-2 icon-inline">
+                                		<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                	</svg>
+                                	Github
+                        		</h6>
+                        		
+                        		<span class="text-secondary"  >bootdey</span>
+                        	</li>
+                        	
+                        
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe me-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
+                                <span class="text-secondary"  >https://bootdey.com</span>
+                            </li>
+                        
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter me-2 icon-inline text-info"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>Twitter</h6>
+                                <span class="text-secondary">@bootdey</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram me-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
+                                <span class="text-secondary">bootdey</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook me-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
+                                <span class="text-secondary">bootdey</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0" >Full Name</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary my-text-secondary" th:text="${user.prenom +' ' +user.nom}">
+                                    Kenneth Valdez
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Email</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary my-text-secondary" th:text="${user.email}">
+                                    fip@jukmuh.al
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Phone</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary my-text-secondary" th:text="${user.phone}">
+                                    (239) 816-9029
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Adresse</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary my-text-secondary" th:text="${user.currentPost}">
+                                    (320) 380-4539
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Address</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary my-text-secondary" th:text="${user.adresse}">
+                                    Bay Area, San Francisco, CA
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row" sec:authorize="isAuthenticated()" th:if=" ${user!=null and logedInUser!=null and user.id==logedInUser.id}">
+                                <div class="col-sm-12">
+                                    <a class="btn btn-primary my-btn-primary px-3" 
+                                        th:href="@{/profile/editProfile/{userId}(userId=${user.id})}">Edit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gutters-sm">
+                        <div class="col-sm-12 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h2 class="d-flex align-items-center mb-3">Project Status</h2>
+                                    <small>Web Design</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                        <div class="progress-bar my-bg-prm" role="progressbar" style="width: 80%"
+                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>Website Markup</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                        <div class="progress-bar my-bg-prm" role="progressbar" style="width: 72%"
+                                            aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>One Page</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                        <div class="progress-bar my-bg-prm" role="progressbar" style="width: 89%"
+                                            aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>Mobile Template</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                        <div class="progress-bar my-bg-prm" role="progressbar" style="width: 55%"
+                                            aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <small>Backend API</small>
+                                    <div class="progress mb-3" style="height: 5px">
+                                        <div class="progress-bar my-bg-prm" role="progressbar" style="width: 66%"
+                                            aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+<script src="https://kit.fontawesome.com/73b41123f4.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

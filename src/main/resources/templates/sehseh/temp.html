@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thmeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./Assets/public/style.css">
+    <link rel="stylesheet" href="./Assets/css/main-style.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+
+<body id="serivces-page">
+        
+        <div th:replace="fragments/navbar :: navbar" ></div>
+        
+    <!-- Intro Section  -->
+    <div class="my-24">
+        <div class="Srv flex justify-center">
+            <p class="text-5xl ">Services</p>
+        </div>
+	
+	    
+        <div class="Srv flex justify-left"  th:if="${ratedServices.size() > 0}">
+            <p class="text-5xl ">Rated Services :</p>
+        </div>
+        <Section class="Srv-section flex justify-center mt-12 pt-24 justify-around flex-wrap">
+            
+            <div th:each="gig : ${ratedServices}">
+            	<!-- Card -->
+	            <div class="Srv-card w-80 h-100 rounded overflow-hidden my-4">
+	                <div class="Srv-img">
+	                    
+							<img th:src="@{${gig.getImage().getPath()}}" >
+						
+	                </div>
+	                <div class="Srv-time px-1 mx-2 my-3">
+	                <p   class="font-bold	" ><span th:text="${gig.prix}" style="padding:5px">Prix</span><span>DT</span></p>
+	                </div>
+	                <div class="Srv-face absolute">
+	                    <img class="" src="./Assets/images/Srv-Face-1.jpg" alt="">
+	                </div>
+	                <div class="Srv-text p-6 mt-14">
+	                    <p class="text-2xl text-center font-bold t1" th:text="${gig.titre}">
+	                        Test Titre 
+	                    </p>
+	                    <p class="lg mt-8 t2" th:text="${gig.description}">
+	                        Test Description
+	                    </p>
+	                </div>
+	                <div class="Srv-Button p-4 flex justify-center">
+	                    <a class="enroll-button py-2 px-6 text-xl font-medium test-btn py-2 px-5 mx-3" href="#">Enroll</a>
+							<span style="color :black">
+								Rated !
+							</span>
+	                </div>
+	            </div>
+	            <!-- End Card -->
+            </div>
+                                                            
+            
+        </Section>
+    
+	
+	<hr style="height:5px;margin:10px;border-radius:5%" th:if="${ratedServices.size() > 0}">
+	
+	    
+        <div class="Srv flex justify-left" th:if="${ratedServices.size() > 0}">
+            <p class="text-5xl ">Other Services :</p>
+        </div>
+        <Section class="Srv-section flex justify-center mt-12 pt-24 justify-around flex-wrap">
+            
+            <div th:each="gig : ${gigs}">
+            	<!-- Card -->
+	            <div class="Srv-card w-80 rounded overflow-hidden my-4">
+	                <div class="Srv-img">
+	                    
+							<img th:src="@{${gig.getImage().getPath()}}" >
+						
+	                </div>
+	                <div class="Srv-time px-1 mx-2 my-3">
+	                <p   class="font-bold	" ><span th:text="${gig.prix}" style="padding:5px">Prix</span><span>DT</span></p>
+	                </div>
+	                <div class="Srv-face absolute">
+	                    <img class="" src="./Assets/images/Srv-Face-1.jpg" alt="">
+	                </div>
+	                <div class="Srv-text p-6 mt-14">
+	                    <p class="text-2xl text-center font-bold t1" th:text="${gig.titre}">
+	                        Test Titre 
+	                    </p>
+	                    <p class="lg mt-8 t2" th:text="${gig.description}">
+	                        Test Description
+	                    </p>
+	                </div>
+	                <div class="Srv-Button p-4 flex justify-center">
+	                    <a class="enroll-button py-2 px-6 text-xl font-medium test-btn py-2 px-5 mx-3" href="#">Enroll</a>
+						<span sec:authorize="isAuthenticated()" th:if="${ gig.getUser().getId() != currentLoggedInUser.getId() }">
+	                    			
+			             	<a  th:href="@{/User/rate/{gigId}(gigId=${gig.getId()})}" class="enroll-button py-2 px-6 text-xl font-medium test-btn py-2 px-5 mx-3">Rate</a>
+			                    			
+			            </span>
+	                </div>
+	            </div>
+	            <!-- End Card -->
+            </div>
+                                                            
+            
+        </Section>
+    
+    <!-- End Intro Section  -->
+</div>
+</body>
+
+</html>

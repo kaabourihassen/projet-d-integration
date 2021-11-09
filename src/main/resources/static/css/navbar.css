@@ -1,0 +1,225 @@
+.nav-title {
+  font-weight: bolder;
+  color: #F6F7FF !important;
+}
+
+.nav-link {
+  color: #F6F7FF !important;
+}
+
+.my-search-btn {
+  border: 1px #F6F7FF solid;
+  color: #F6F7FF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.my-search-btn:hover {
+  background-color: #F6F7FF;
+  color: #6271FF;
+  border: 1px #F6F7FF solid;
+}
+
+.my-search-form {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px #F6F7FF solid;
+  border-radius: 0%;
+  color: #F6F7FF !important;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.my-search-form::-webkit-input-placeholder {
+  color: #F6F7FF;
+}
+
+.my-search-form:-ms-input-placeholder {
+  color: #F6F7FF;
+}
+
+.my-search-form::-ms-input-placeholder {
+  color: #F6F7FF;
+}
+
+.my-search-form::placeholder {
+  color: #F6F7FF;
+}
+
+.my-search-form:focus {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px #F6F7FF solid;
+  border-radius: 0%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: .8;
+}
+
+.avatar-container {
+  -webkit-clip-path: circle(50%);
+          clip-path: circle(50%);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 80px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar:hover {
+  -webkit-animation: shake .5s ease-in-out;
+          animation: shake .5s ease-in-out;
+}
+
+.avatar-name {
+  font-weight: bold;
+}
+
+.avatar-name:hover + .avatar {
+  -webkit-animation: shake .5s ease-in-out;
+          animation: shake .5s ease-in-out;
+}
+
+@-webkit-keyframes dropdown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-1%) scale(-1);
+            transform: translateY(-1%) scale(-1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-1%) scale(-1);
+            transform: translateY(-1%) scale(-1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%);
+  }
+  20% {
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%);
+  }
+  40% {
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%);
+  }
+  60% {
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%);
+  }
+  80% {
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%);
+  }
+  20% {
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%);
+  }
+  40% {
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%);
+  }
+  60% {
+    -webkit-transform: translateX(-2%);
+            transform: translateX(-2%);
+  }
+  80% {
+    -webkit-transform: translateX(2%);
+            transform: translateX(2%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+.my-dropdown {
+	position: absolute;
+  -webkit-animation: dropdown .2s ease-in-out;
+          animation: dropdown .2s ease-in-out;
+   width:145%;
+   margin-left:-40%;
+   text-align:center;
+}
+
+.my-dropdown-element {
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+.my-dropdown-element input {
+  background-color: transparent;
+}
+
+.my-dropdown-element a {
+  color:black;
+  
+}
+
+.my-dropdown-element:hover {
+  color: #F6F7FF ;
+  background-color: #278EFF;
+}
+
+.nav-link {
+  overflow: hidden;
+  position: relative;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 2px solid #F6F7FF;
+  -webkit-transform: translateX(-120%);
+          transform: translateX(-120%);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.nav-link:hover::before {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+@media screen and (max-width: 992px) {
+  .dropdown {
+    padding-top: 1rem !important;
+  }
+}
+/*# sourceMappingURL=navbar.css.map */

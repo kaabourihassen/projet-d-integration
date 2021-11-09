@@ -1,0 +1,202 @@
+/*//////////////////////////////////////////////////////////////////
+[ COLORS ]*/
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+@font-face {
+  font-family: Light-Regular;
+  src: url("../fonts/Monts/Montserrat-Light.ttf");
+}
+
+@font-face {
+  font-family: Monts-Regular;
+  src: url("../fonts/Monts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: Monts-Medium;
+  src: url("../fonts/Monts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: Monts-Bold;
+  src: url("../fonts/Monts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: Monts-SemiBold;
+  src: url("../fonts/Monts/Montserrat-SemiBold.ttf");
+}
+
+html {
+  font-family: Monts-Regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+a {
+  color: #F6F7FF;
+}
+
+#landpage-no-user {
+  background-image: url(../images/Background-shape.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.learn-more-button {
+  color: #F6F7FF;
+  border: 2px #F6F7FF solid;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.learn-more-button:hover {
+  color: #278EFF;
+  background-color: #F6F7FF;
+}
+
+#search-nav {
+  border-bottom: 2px #F6F7FF solid;
+  background-color: transparent;
+  outline: none;
+}
+
+#search-nav::-webkit-input-placeholder {
+  color: #F6F7FF;
+  font-family: Monts-Regular;
+}
+
+#search-nav:-ms-input-placeholder {
+  color: #F6F7FF;
+  font-family: Monts-Regular;
+}
+
+#search-nav::-ms-input-placeholder {
+  color: #F6F7FF;
+  font-family: Monts-Regular;
+}
+
+#search-nav::placeholder {
+  color: #F6F7FF;
+  font-family: Monts-Regular;
+}
+
+#search-nav::after {
+  content: url("https://s2.svgbox.net/octicons.svg?ic=search");
+}
+
+.nav-button {
+  border-radius: 20px;
+  border: 2px #F6F7FF solid;
+  color: #F6F7FF;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.nav-button:hover {
+  color: #6271FF;
+  background-color: #F6F7FF;
+}
+
+#serivces-page {
+  background-color: #F6F7FF;
+}
+
+.nav-header {
+  background: #278EFF;
+  background: -webkit-gradient(linear, left top, right top, from(#278EFF), to(#6271FF));
+  background: linear-gradient(to right, #278EFF, #6271FF);
+  width: 100% !important;
+}
+
+.Srv p {
+  color: #1763B7;
+  font-family: monts-bold;
+}
+
+.Srv-section {
+  width: 80%;
+  margin: auto;
+}
+
+.Srv-card {
+  color: #0C54A2;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+}
+
+.Srv-card .Srv-face {
+  background-color: red;
+  width: 100%;
+  position: relative;
+  z-index: 11;
+}
+
+.Srv-card .Srv-face img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-clip-path: circle(25% at 50% 50%);
+          clip-path: circle(25% at 50% 50%);
+}
+
+.Srv-card .Req-face {
+  background-color: red;
+  width: 100%;
+  position: relative;
+  z-index: 11;
+}
+
+.Srv-card .Req-face img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+}
+
+.Srv-card .Srv-time {
+  background-color: #278EFF;
+  color: #F6F7FF;
+  position: absolute;
+  border-radius: 50px;
+  top: 0;
+  left: 0;
+}
+
+.Srv-card .Srv-text .t1 {
+  color: #0C54A2;
+}
+
+.Srv-card .Srv-text .t2 {
+  color: #1763B7;
+}
+
+.Srv-card .Srv-Button .enroll-button {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: #278EFF;
+  background: -webkit-gradient(linear, left top, right top, from(#278EFF), to(#6271FF));
+  background: linear-gradient(to right, #278EFF, #6271FF);
+  border-radius: 50px;
+  border: 2px transparent solid;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.Srv-card .Srv-Button .enroll-button:hover {
+  background: #F6F7FF;
+  color: #278EFF;
+  border: 2px #278EFF solid;
+}
+/*# sourceMappingURL=main-style.css.map */

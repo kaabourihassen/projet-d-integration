@@ -1,0 +1,502 @@
+/*//////////////////////////////////////////////////////////////////
+[ COLORS ]*/
+$background-purple:#6271FF;
+$background-blue: #278EFF;
+$blue-white:#F6F7FF;
+$darker-blue:#0C54A2;
+$dark-blue: #1763B7;
+$medium-blye: #278EFF;
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+@font-face {
+    font-family: Light-Regular;
+    src: url('../fonts/Monts/Montserr at-Light.ttf');
+}
+
+@font-face {
+    font-family: Monts-Regular;
+    src: url('../fonts/Monts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: Monts-Medium;
+    src: url('../fonts/Monts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+    font-family: Monts-Bold;
+    src: url('../fonts/Monts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+    font-family: Monts-SemiBold;
+    src: url('../fonts/Monts/Montserrat-SemiBold.ttf');
+}
+
+html {
+    font-family: Monts-Regular;
+}
+
+body {
+    background-color: $blue-white;
+}
+
+#background-shape {
+    background-image: url(../img/Background-shape.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+//////////////////////////////////////////////////////
+.register-login {
+    background-color: $blue-white;
+    border-radius: 10px;
+    width: 25%;
+    margin: auto;
+    margin-top: 10rem;
+    min-width: 400px !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.nav-link {
+    background-color: $blue-white;
+}
+
+.my-sc-btn {
+    background-color: $medium-blye;
+
+    &:hover {
+        background-color: $dark-blue;
+    }
+}
+
+.my-btn {
+    &:hover {
+        background-color: $medium-blye;
+    }
+}
+
+.nav-header {
+    background: linear-gradient(to right, $background-purple, $background-blue);
+}
+
+.reg-log-btn,
+.learn-more-btn {
+    color: $blue-white;
+    border: 1px $blue-white solid;
+    border-radius: 20px;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        background-color: $blue-white;
+        color: $medium-blye;
+    }
+}
+
+.learn-more-btn {
+    font-size: 2rem;
+}
+
+.Categories {
+    a {
+        color: $blue-white;
+    }
+}
+
+.intro-text {
+    color: $blue-white;
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .btn-box {
+        margin-top: 3rem;
+
+        a {
+            border: 2px $blue-white solid;
+            border-radius: 50px;
+        }
+    }
+
+}
+
+.intro-svg {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.search {
+    form {
+        input {
+            outline: none;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px $blue-white solid;
+            color: $blue-white;
+
+            &::placeholder {
+                color: $blue-white;
+            }
+        }
+    }
+}
+
+.row {
+    position: relative;
+}
+
+.hamb-div {
+    position: absolute;
+    display: none !important;
+
+    .hamb {
+        .line {
+            height: 5px;
+            background-color: $blue-white;
+            width: 2rem;
+            border-radius: 20px;
+        }
+    }
+}
+
+.about-us-info {
+    background-color: $blue-white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    width: 70%;
+    margin: auto;
+
+    .about-us-text {
+        margin: 5rem;
+
+        h2 {
+            color: $darker-blue;
+            font-weight: bold;
+        }
+
+        p {
+            color: $dark-blue;
+        }
+    }
+
+    .about-us-svg {
+        margin-left: 5rem;
+        margin-right: 5em;
+
+        img {
+            max-width: 400px;
+
+        }
+    }
+}
+
+.cst-about-pad {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+.domains-title {
+    h1 {
+        text-align: center;
+        font-weight: bold;
+        color: $dark-blue;
+    }
+}
+
+.domain-card {
+    background-color: $blue-white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    max-width: 300px;
+    min-height: 300px;
+    position: relative;
+
+    .domain-text {
+        margin-top: 2.5rem !important;
+        margin-bottom: 2.5rem !important;
+
+        h1 {
+            color: $darker-blue;
+            text-align: center;
+        }
+
+        p {
+            color: $dark-blue;
+        }
+    }
+}
+
+.test-card {
+    background-color: $blue-white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    max-width: 400px;
+    max-height: 600px;
+    position: relative;
+    overflow: hidden;
+    min-width: 300px;
+
+    .test-img {
+        position: relative;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+    }
+
+    .tester-face {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            clip-path: circle(30% at 50% 50%);
+        }
+    }
+
+    .test-text {
+        padding-top: 10rem;
+    }
+
+}
+
+.contact-form {
+    background: #fff;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 70%;
+}
+
+.contact-form .form-control {
+    border-radius: 1rem;
+}
+
+.contact-image {
+    text-align: center;
+}
+
+.contact-image img {
+    border-radius: 6rem;
+    width: 11%;
+    margin-top: -5%;
+    transform: rotate(29deg);
+}
+
+.contact-form form {
+    padding: 10%;
+}
+
+.contact-form form .row {
+    margin-bottom: -7%;
+}
+
+.contact-form h3 {
+    margin-bottom: 8%;
+    margin-top: -10%;
+    text-align: center;
+    color: #0062cc;
+}
+
+.contact-form .btnContact {
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $blue-white;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px $blue-white solid;
+    transition: all .3s ease;
+}
+
+.btnContact:hover {
+    background-color: $blue-white;
+    color: $medium-blye;
+}
+
+.btnContactSubmit {
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #0062cc;
+    border: none;
+    cursor: pointer;
+}
+
+.upload-msg {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    color: $blue-white;
+    border: 1px $blue-white dashed;
+    padding: 3rem;
+}
+
+.upload-input {
+    width: 50%;
+    background-color: red;
+    position: absolute;
+    padding: 0;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+}
+
+.my-blocks {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    padding: 0.7rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-bg {
+    border-radius: 20px;
+    background-color: $medium-blye;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.tt-add {
+    color: $blue-white !important;
+}
+
+.form-group {
+    position: relative;
+
+    label {
+        color: $blue-white;
+        font-size: 1.5rem;
+    }
+}
+
+
+.crd {
+    overflow: hidden;
+
+    h5 {
+        color: $darker-blue;
+
+
+    }
+
+    span.small {
+        color: $dark-blue !important;
+        text-align: left !important;
+    }
+}
+.tt-tests{
+    color: $medium-blye;
+    font-weight: bold;
+}
+.card-img {
+    img {
+        max-width: 100%;
+    }
+
+}
+
+.test-btn {
+    background: $background-blue;
+    background: linear-gradient(90deg, $background-purple 0%, $background-blue 100%);
+    border-radius: 50px;
+    color: $blue-white;
+    font-size: 1rem;
+    border: 1px transparent solid;
+    transition: all .5s ease;
+
+    &:hover {
+        background: $blue-white !important;
+        border: 1px $background-blue solid;
+        color: $background-blue;
+    }
+}
+.rate-btn {
+    border: 1px $background-blue solid;
+   
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all .5s ease;
+    color: $background-blue;
+    &:hover {
+        color: $blue-white;
+        border: 1px transparent solid;
+        background: $background-blue;
+        background: linear-gradient(90deg, $background-purple 0%, $background-blue 100%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Categories {
+        display: none;
+    }
+
+    .search {
+        justify-content: start !important;
+        padding-left: 2rem;
+    }
+
+    .intro-svg {
+        display: none;
+    }
+
+    .about-us-svg {
+        display: none;
+    }
+
+    .upload-input,
+    .upload-msg {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .register-login {
+        margin: 10rem 5rem auto 5rem;
+    }
+
+    .hamb-div {
+        display: flex !important;
+    }
+
+    .pp {
+        padding: 0 !important;
+    }
+
+    .search,
+    .nav-links {
+        display: none !important;
+    }
+
+    .btnContact {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .contact-form {
+        width: 90% !important;
+    }
+}

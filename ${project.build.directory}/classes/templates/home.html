@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="./Assets/public/style.css">
+    <link rel="stylesheet" href="./Assets/css/main-style.css">
+	<link rel="stylesheet" href="/css/navbar.css">
+</head>
+
+<body id="landpage-no-user">
+
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <!-- Intro Section  -->
+    <div class="mt-24">
+        <div class="intro flex justify-center items-center">
+            <div class="intro-text">
+                <h1 class="lg:text-5xl md:text-xl">Learn, Master, Coach</h1>
+                <p class="xl mt-6">+1000 Coachs proved by teachers are available
+                    for you to keep learning</p>
+                <div class="mt-11">
+                    <a class="learn-more-button rounded p-3 text-2xl" href="">learn more</a>
+                </div>
+
+            </div>
+            <div class="intro-image">
+                <img src="./Assets/images/Intro-image.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- End Intro Section  -->
+  
+</body>
+
+</html>

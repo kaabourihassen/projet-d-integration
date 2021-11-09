@@ -1,0 +1,23 @@
+{
+  "name": "Projet-iset",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build src/style.css -o public/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oussema556/Projet-iset.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oussema556/Projet-iset/issues"
+  },
+  "homepage": "https://github.com/oussema556/Projet-iset#readme",
+  "dependencies": {
+    "tailwindcss": "^2.0.4"
+  }
+}

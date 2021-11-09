@@ -1,0 +1,192 @@
+/*//////////////////////////////////////////////////////////////////
+[ COLORS ]*/
+$background-purple:#6271FF;
+$background-blue: #278EFF;
+$blue-white:#F6F7FF;
+$darker-blue:#0C54A2;
+$dark-blue: #1763B7;
+$medium-blye: #278EFF;
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+@font-face {
+  font-family: Light-Regular;
+  src: url('../fonts/Monts/Montserrat-Light.ttf');
+}
+
+@font-face {
+  font-family: Monts-Regular;
+  src: url('../fonts/Monts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: Monts-Medium;
+  src: url('../fonts/Monts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+  font-family: Monts-Bold;
+  src: url('../fonts/Monts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: Monts-SemiBold;
+  src: url('../fonts/Monts/Montserrat-SemiBold.ttf');
+}
+
+html {
+  font-family: Monts-Regular;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+a {
+  color: $blue-white;
+}
+
+
+
+#landpage-no-user {
+  background-image: url(../images/Background-shape.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.learn-more-button {
+  color: $blue-white;
+  border: 2px $blue-white solid;
+  transition: all .3s ease;
+}
+
+.learn-more-button:hover {
+  color: $medium-blye;
+  background-color: $blue-white;
+}
+
+
+
+#search-nav {
+  border-bottom: 2px $blue-white solid;
+
+  background-color: transparent;
+
+  outline: none;
+
+  &::placeholder {
+    color: $blue-white;
+    font-family: Monts-Regular;
+  }
+
+  &::after {
+    content: url("https://s2.svgbox.net/octicons.svg?ic=search");
+
+  }
+}
+
+.nav-button {
+  border-radius: 20px;
+  border: 2px $blue-white solid;
+  color: $blue-white;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: $background-purple;
+    background-color: $blue-white;
+  }
+}
+
+#serivces-page {
+  background-color: $blue-white;
+}
+
+.nav-header {
+  background: $background-blue;
+  background: -webkit-linear-gradient(to right, $background-blue, $background-purple);
+  background: linear-gradient(to right, $background-blue, $background-purple);
+  width: 100% !important;
+}
+
+.Srv {
+  p {
+    color: $dark-blue;
+    font-family: monts-bold;
+  }
+}
+.Srv-section{
+  width: 80%;
+  margin: auto;
+ 
+}
+.Srv-card {
+  color: $darker-blue;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+
+  .Srv-face {
+    background-color: red;
+    width: 100%;
+    position: relative;
+    z-index: 11;
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+        transform: translate(-50%, -50%);
+        clip-path: circle(25% at 50% 50%);
+    }
+  }
+
+  .Req-face{
+    background-color: red;
+    width: 100%;
+    position: relative;
+    z-index: 11;
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+        transform: translate(-50%, -50%);
+        clip-path: circle(50% at 50% 50%);
+    }
+  }
+
+  .Srv-time {
+    background-color: $medium-blye;
+    color: $blue-white;
+    position: absolute;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+  }
+  .Srv-text{
+    .t1{
+      color: $darker-blue;
+    }
+    .t2{
+      color: $dark-blue;
+    }
+  }
+  .Srv-Button {
+    .enroll-button {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      background: $background-blue;
+      background: -webkit-linear-gradient(to right, $background-blue, $background-purple);
+      background: linear-gradient(to right, $background-blue, $background-purple);
+      border-radius: 50px;
+      border: 2px transparent solid;
+      transition: all 0.3s ease;
+      &:hover{
+        background: $blue-white;
+        color: $medium-blye;
+        border: 2px $background-blue solid;
+      }
+    }
+  }
+}
+

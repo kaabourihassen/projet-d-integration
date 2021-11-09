@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Accounts</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link th:href="@{/css/profile.css}" rel="stylesheet">
+<style>
+			.grid70-30{
+				    display: grid;
+				    grid-template-columns: 70% 30%;
+			}
+		</style>
+</head>
+<body class="container">
+	<h1 style="text-align:center; margin:10px;padding:10px">Accounts </h1>
+	
+			<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+			  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+			    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+			  </symbol>
+			  <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+			    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+			  </symbol>
+			</svg>
+			
+			<div  th:if="${Succes != null}" class="alert alert-success d-flex align-items-center alert-dismissible fade show" role="alert">
+			  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+			  <div th:text="${Succes}">
+			    An example success alert with an icon
+			  </div>
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			
+			<div th:if="${Failed != null}" class="alert alert-danger d-flex align-items-center alert-dismissible fade show" role="alert">
+			  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+			  <div th:text="${Failed}">
+			    An example danger alert with an icon
+			  </div>
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		
+	<div th:if="${users != null and users.size() > 0}" class="table-responsive" style="margin:20px;">
+		  <table class="table  my-table table-responsive" >
+			  <thead>
+			    <tr>
+			    	<th>UserID</th>
+			    	<th>Username</th>
+			    	<th>First name</th>
+			    	<th>Last name</th>
+			    	<th>Email</th>
+			    	<th>Enabled</th>
+			    	<th>Roles</th>
+			    	<!-- <th>Test Demands</th> -->
+			    	<th>Services</th><!-- bch ykoun number wfi a href t7ellou pop up w2la thezou lpage o5ra tsartet fiha kol chay-->
+			    	<th>Requests</th>
+			    	<th>Images</th>
+			    	<th>Tests</th>
+			    	<th>Services Rated</th>
+			    	
+			    	<th>Actions</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    
+			    <tr th:if="${users != null and users.size > 0}" th:each="user : ${users}">
+			    	<td th:text="${user.id}">UserID</td>
+			    	<td th:text="${user.userName}">Username</td>
+			    	<td th:text="${user.prenom}">First name</td>
+			    	<td th:text="${user.nom}">Last name</td>
+			    	<td th:text="${user.email}">Email</td>
+			    	<td>
+						<i class="fas fa-check" th:if="${user.enabled}" style="color:green"></i>
+					 	<i class="fas fa-times" th:unless="${user.enabled}" style="color:red"></i>
+					</td>
+			    	
+			    	<td th:if="${user.roles != null and user.roles.size() > 0}" >
+			    		<span th:each="role : ${user.roles}" >
+			    			<span th:text="${role.name}"> Role name</span>
+			    		</span>
+			    	</td>
+			    	
+			    	<!-- <td th:if="user.testDemands != null " th:text="${user.testDemands}">Test Demands</td>  -->
+			    	<td th:if="${user.services != null}">
+			    		<a th:if="${user.services.size() > 0}" th:href="@{#}"><span th:text="${user.services.size()}" style="color:blue;text-decoration-line: underline;">Services</span></a>
+			    		<span th:unless="${user.services.size() > 0}">
+			    			<span>0</span>
+			    		</span>
+			    	</td>
+			    	
+			    	<td th:if="${user.requests != null}">
+			    		<a th:if="${user.requests.size() > 0}" th:href="@{#}"><span th:text="${user.requests.size()}" style="color:blue;text-decoration-line: underline;">Requests</span></a>
+			    		<span th:unless="${user.requests.size() > 0}">
+			    			<span>0</span>
+			    		</span>
+			    	</td>
+			    	
+			    	<td th:text="${user.id}">Images</td>
+			    	
+			    	<td th:if="${user.tests != null}">
+			    		<a th:if="${user.tests.size() > 0}" th:href="@{#}"><span th:text="${user.tests.size()}" style="color:blue;text-decoration-line: underline;">Tests</span></a>
+			    		<span th:unless="${user.tests.size() > 0}">
+			    			<span>0</span>
+			    		</span>
+			    	</td>
+			    	
+			    	<td th:if="${user.servicesRated != null}">
+			    		<a th:if="${user.servicesRated.size() > 0}" th:href="@{#}"><span th:text="${user.servicesRated.size()}" style="color:blue;text-decoration-line: underline;">Services Rated</span></a>
+			    		<span th:unless="${user.servicesRated.size() > 0}">
+			    			<span>0</span>
+			    		</span>
+			    	</td>
+
+			    	<td>
+			    		<!-- 
+			    			<a th:href="@{/Admin/editUser/{userId}(userId=${user.getId()})}" class="btn btn-primary">
+					    		<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"
+			                        viewBox="0 0 24 24" fill="" color="#000">
+			                        <path d="M0 0h24v24H0z" fill="none"></path>
+			                        <path
+			                            d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z">
+			                        </path>
+			                    </svg>
+		                    </a>
+			    		 -->
+						
+						  <!-- Button trigger modal -->
+						<button type="button" class="btn " data-bs-toggle="modal" th:data-bs-target="${'#exampleModal'+user.id}">
+						  <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"
+		                        viewBox="0 0 24 24" fill="currentColor" color="#000">
+		                        <path d="M0 0h24v24H0z" fill="none"></path>
+		                        <path
+		                            d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z">
+		                        </path>
+		                    </svg>
+						</button>
+						
+						<!-- Modal -->
+						<div class="modal fade" th:id="${'exampleModal'+user.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						  <div class="modal-dialog modal-dialog-centered">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="exampleModalLabel" ><span>Delete <span th:text="${user.userName}">User title that is goin to be deleted</span><span> ?</span></span></h5>
+						        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						      </div>
+						      <div class="modal-body">
+						        <span>Are you sure u want to delete <span th:text="${user.userName}">User title that is goin to be deleted</span></span>
+						        <span> ? </span>
+						      </div>
+						      <div class="modal-footer grid70-30">
+						        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="margin-right:75%">Cnacel</button>
+						        <!-- delete request link -->
+								<a th:href="@{/Admin/deleteUser/{userId}(userId=${user.getId()})}" >
+									<button type="button" class="btn btn-primary" style="margin-left:35%">Confirm</button>
+								</a>
+								
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						
+						<a th:if="${user.enabled == false}" th:href="@{/Admin/enableAccount/{userId}(userId=${user.getId()})}" class="btn ">
+							<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+		                        fill="currentColor" color="#000">
+		                        <path d="M0 0h24v24H0V0z" fill="none"></path>
+		                        <path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"></path>
+		                    </svg>
+						</a>
+						<a th:unless="${user.enabled == false}" th:href="@{/Admin/disableAccount/{userId}(userId=${user.getId()})}" class="btn ">
+							<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+		                        fill="currentColor" color="#000">
+		                        <path fill="none" d="M0 0h24v24H0z"></path>
+		                        <path
+		                            d="M12 6.34L21 3l-3.34 9L12 6.34zm10.61 13.44L4.22 1.39 2.81 2.81l5.07 5.07L3 9.69v1.41l7.07 2.83L12.9 21h1.41l1.81-4.88 5.07 5.07 1.42-1.41z">
+		                        </path>
+		                    </svg>
+	                    </a>
+			    	</td>
+			    </tr>
+			    
+			  </tbody>
+			</table>
+			
+		</div>
+		<div th:unless="${users != null and users.size() > 0}">
+			<hr>
+			<h3 style="text-align:center; margin:20%">There is no Accounts !</h3>
+		</div>
+<script src="https://kit.fontawesome.com/73b41123f4.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+</body>
+</html>

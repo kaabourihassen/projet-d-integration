@@ -1,0 +1,361 @@
+/*//////////////////////////////////////////////////////////////////
+[ COLORS ]*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+body {
+  background-color: #F6F7FF;
+  font-family: Roboto;
+}
+
+svg {
+  fill: #6271FF;
+}
+
+.stroke-svg {
+  stroke: #F6F7FF;
+}
+
+.side-icons {
+  fill: #F6F7FF;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+}
+
+.side-nav-item:hover .side-icons {
+  fill: #6271FF !important;
+}
+
+.side-icons:hover {
+  fill: #6271FF;
+}
+
+.bi-chevron-down {
+  fill: #F6F7FF;
+}
+
+.my-btn-primary:hover .bi-chevron-down {
+  fill: #6271FF;
+}
+
+.my-btn-primary:hover .stroke-svg {
+  stroke: #6271FF;
+}
+
+nav a {
+  color: #F6F7FF;
+  text-decoration: none;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+}
+
+.blue-card {
+  background: linear-gradient(45deg, #6271FF 10%, #278EFF 100%) !important;
+}
+
+.blue-card h1,
+.blue-card h2,
+.blue-card h3,
+.blue-card h4,
+.blue-card h5,
+.blue-card h6,
+.blue-card p,
+.blue-card span,
+.blue-card label,
+.blue-card small {
+  color: #F6F7FF !important;
+}
+
+.list-group-item {
+  background-color: transparent;
+}
+
+.my-btn-primary {
+  background-color: #278EFF;
+  border: 1px #F6F7FF solid;
+  color: #F6F7FF;
+  font-weight: 700;
+}
+
+.my-btn-primary:hover {
+  background-color: transparent;
+  border: 1px #278EFF solid;
+  color: #278EFF;
+}
+
+.btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 2px #278EFF solid;
+}
+
+.my-btn-outline-primary {
+  border: 1px #F6F7FF solid;
+  color: #F6F7FF;
+}
+
+.my-btn-outline-primary:hover {
+  background-color: #F6F7FF;
+  border: 1px #F6F7FF solid;
+  color: #278EFF;
+}
+
+.my-text-secondary {
+  opacity: .8;
+}
+
+.my-bg-prm {
+  background-color: #278EFF;
+}
+
+.progress {
+  background-color: #F6F7FF;
+}
+
+.change-pic ::after {
+  content: "cm";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: red;
+}
+
+/*
+    DEMO STYLE
+*/
+.navbar {
+  padding: 15px 10px;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 40px;
+}
+
+.navbar-btn {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: linear-gradient(135deg, #6271FF 10%, #278EFF 100%) !important;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: transparent;
+  border-bottom: 1px solid #F6F7FF;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #7386D5;
+  background: #fff;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: #6d7fcc;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #6d7fcc;
+}
+
+ul.CTAs {
+  padding: 20px;
+}
+
+ul.CTAs a {
+  text-align: center;
+  font-size: 0.9em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+a.download {
+  background: #fff;
+  color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+  background: #6d7fcc !important;
+  color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #sidebarCollapse span {
+    display: none;
+  }
+}
+
+.my-table {
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.my-table tbody {
+  background-color: #fdfdfd;
+}
+
+.my-search {
+  background-color: #F6F7FF;
+  border: none;
+  border-bottom: 2px gray solid;
+  border-radius: 0;
+}
+
+.my-search:focus {
+  border: none;
+  border-bottom: 2px #278EFF solid;
+  background-color: #F6F7FF;
+}
+
+.card-counter {
+  -webkit-box-shadow: 2px 2px 10px #DADADA;
+          box-shadow: 2px 2px 10px #DADADA;
+  margin: 5px;
+  padding: 20px 10px;
+  background-color: #fff;
+  height: 100px;
+  border-radius: 5px;
+  -webkit-transition: .3s linear all;
+  transition: .3s linear all;
+  position: relative;
+}
+
+.card-counter:hover {
+  -webkit-box-shadow: 4px 4px 20px #DADADA;
+          box-shadow: 4px 4px 20px #DADADA;
+  -webkit-transition: .3s linear all;
+  transition: .3s linear all;
+}
+
+.card-counter.primary {
+  background-color: #007bff;
+  color: #FFF;
+}
+
+.card-counter.danger {
+  background-color: #ef5350;
+  color: #FFF;
+}
+
+.card-counter.success {
+  background-color: #66bb6a;
+  color: #FFF;
+}
+
+.card-counter.info {
+  background-color: #26c6da;
+  color: #FFF;
+}
+
+.card-counter i {
+  font-size: 5em;
+  opacity: 0.2;
+}
+
+.card-counter .count-numbers {
+  font-size: 1.5rem;
+}
+
+.card-counter .count-name {
+  text-transform: capitalize;
+  opacity: 1;
+  font-size: 1.5rem;
+}
+
+.my-card-color {
+  background: linear-gradient(45deg, #6271FF 10%, #278EFF 100%) !important;
+  color: #F6F7FF;
+}
+/*# sourceMappingURL=profile.css.map */

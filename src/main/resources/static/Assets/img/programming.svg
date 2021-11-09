@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="115.105" height="115.105" viewBox="0 0 115.105 115.105">
+  <g id="programming" transform="translate(0)">
+    <path id="Tracé_100" data-name="Tracé 100" d="M57.553,0A57.553,57.553,0,1,1,0,57.553,57.553,57.553,0,0,1,57.553,0Z" transform="translate(0)" fill="#278eff"/>
+    <path id="Tracé_93" data-name="Tracé 93" d="M193.011,162.992c0-.008,0-.016,0-.025l-26.949-26.949L100.5,189.966l30.4,30.4q2.257.177,4.559.18A57.553,57.553,0,0,0,193.011,162.992Z" transform="translate(-77.906 -105.439)" fill="#1763b7"/>
+    <path id="Tracé_94" data-name="Tracé 94" d="M277.179,136.018h-30.6l-2.733,47.97,33.337-2.733Z" transform="translate(-189.023 -105.439)" fill="#9abadb"/>
+    <g id="Groupe_1" data-name="Groupe 1" transform="translate(26.949 30.579)">
+      <path id="Tracé_95" data-name="Tracé 95" d="M119.873,136.018v45.237l30.6,2.733v-47.97Z" transform="translate(-119.873 -136.018)" fill="#d1e8ff"/>
+      <path id="Tracé_96" data-name="Tracé 96" d="M281.534,337.236H246.575l-2.733,4.355,2.733,4.355h34.959Z" transform="translate(-215.972 -291.999)" fill="#d1e8ff"/>
+    </g>
+    <rect id="Rectangle_8" data-name="Rectangle 8" width="34.959" height="8.711" transform="translate(22.594 75.817)" fill="#f5f5ff"/>
+    <path id="Tracé_97" data-name="Tracé 97" d="M273.082,154.24H246.575l-2.733,18.522,2.733,18.522h26.507Z" transform="translate(-189.023 -119.565)" fill="#278eff"/>
+    <rect id="Rectangle_9" data-name="Rectangle 9" width="26.506" height="37.043" transform="translate(31.047 34.675)" fill="#278eff"/>
+    <path id="Tracé_98" data-name="Tracé 98" d="M171.7,210.058,160.85,199.206,171.7,188.353l2.9,2.9-7.956,7.956,7.956,7.956Z" transform="translate(-124.689 -146.008)" fill="#f5f5ff"/>
+    <g id="Groupe_2" data-name="Groupe 2" transform="translate(53.017 40.101)">
+      <path id="Tracé_99" data-name="Tracé 99" d="M292.888,210.058l-2.9-2.9,7.956-7.956-7.956-7.956,2.9-2.9,10.853,10.853Z" transform="translate(-277.813 -186.11)" fill="#f6f7ff"/>
+      <rect id="Rectangle_10" data-name="Rectangle 10" width="4.097" height="25.895" transform="matrix(-0.981, -0.195, 0.195, -0.981, 4.018, 26.197)" fill="#f6f7ff"/>
+    </g>
+  </g>
+</svg>
